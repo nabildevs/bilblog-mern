@@ -8,31 +8,37 @@ import SinglePostPage from './routes/SinglePostPage.jsx';
 import Write from './routes/Write.jsx';
 import RegisterPage from './routes/RegisterPage.jsx';
 import LoginPage from './routes/LoginPage.jsx';
+import MainLayout from './layouts/MainLayout.jsx';
 
 const router = createBrowserRouter([
 	{
-		path: '/',
-		element: <HomePage />,
-	},
-	{
-		path: '/posts',
-		element: <PostListPage />,
-	},
-	{
-		path: '/:slug',
-		element: <SinglePostPage />,
-	},
-	{
-		path: '/write',
-		element: <Write />,
-	},
-	{
-		path: '/register',
-		element: <RegisterPage />,
-	},
-	{
-		path: '/login',
-		element: <LoginPage />,
+		element: <MainLayout />,
+		children: [
+			{
+				path: '/',
+				element: <HomePage />,
+			},
+			{
+				path: '/posts',
+				element: <PostListPage />,
+			},
+			{
+				path: '/:slug',
+				element: <SinglePostPage />,
+			},
+			{
+				path: '/write',
+				element: <Write />,
+			},
+			{
+				path: '/register',
+				element: <RegisterPage />,
+			},
+			{
+				path: '/login',
+				element: <LoginPage />,
+			},
+		],
 	},
 ]);
 
