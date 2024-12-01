@@ -1,3 +1,5 @@
+import Navbar from './components/Navbar';
+
 const App = () => {
 	return (
 		<div className="px-8 md:px-16 lg:px-32 lx:px-64">
